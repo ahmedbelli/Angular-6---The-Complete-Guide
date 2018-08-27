@@ -1,0 +1,9 @@
+# Section 2 Assignments
+
+## Assignment 1
+* Create two new components: WarningAlert and SuccessAlert
+* Output them beneath each other in the AppComponent
+* Output a warning or success message in the components
+* Style the components appropriately
+
+## Assignment 2
