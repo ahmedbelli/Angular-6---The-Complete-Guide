@@ -2,10 +2,21 @@ p {
   color: magenta;
 }
 
-.add-server {
-  margin-top: 10px;
+.white {
+  color: white;
 }
 
+.label {
+  display: block;
+}
+
+.add-server {
+  margin: 10px 0;
+}
+
+#logged-clicks,
+#assign-3,
+#username,
 #server-name,
 #server-create-status,
 #allow-server {
