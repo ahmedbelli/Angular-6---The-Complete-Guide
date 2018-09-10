@@ -13,17 +13,41 @@
       <ul class="list-group">
         <div *ngIf="onlyOdd">
           <li class="list-group-item"
-            *ngFor="let odd of oddNumbers">
+            *ngFor="let odd of oddNumbers"
+            [ngClass]="{odd: odd % 2 !== 0}"
+            [ngStyle]="{backgroundColor: odd % 2 !== 0 ? 'rgba(0, 0, 0, 0.25)' : 'transparent'}">
             {{ odd }}
           </li>
         </div>
-        <div *ngIf="!onlyOdd">
+        <!-- <ng-template [ngIf]="!onlyOdd">
+          <div>
+            <li class="list-group-item"
+              *ngFor="let even of evenNumbers"
+              [ngClass]="{even: even % 2 === 0}"
+              [ngStyle]="{backgroundColor: even % 2 === 0 ? 'rgba(0, 0, 0, 0.25)' : 'transparent'}">
+              {{ even }}
+            </li>
+          </div>
+        </ng-template> -->
+        <div *appUnless="onlyOdd">
           <li class="list-group-item"
-            *ngFor="let even of evenNumbers">
+            *ngFor="let even of evenNumbers"
+            [ngClass]="{even: even % 2 === 0}"
+            [ngStyle]="{backgroundColor: even % 2 === 0 ? 'rgba(0, 0, 0, 0.25)' : 'transparent'}">
             {{ even }}
           </li>
         </div>
       </ul>
+      <p appBasicHighlight>Basic Highlight Directive</p>
+      <p appBetterHighlight
+        [defaultColor]="'yellow'"
+        [highlightColor]="'red'">Better Highlight Directive</p>
+      <div [ngSwitch]="value">
+        <p *ngSwitchCase="5">Value is 5</p>
+        <p *ngSwitchCase="10">Value is 10</p>
+        <p *ngSwitchCase="100">Value is 100</p>
+        <p *ngSwitchDefault>Value is Default</p>
+      </div>
     </div>
   </div>
 </div>
